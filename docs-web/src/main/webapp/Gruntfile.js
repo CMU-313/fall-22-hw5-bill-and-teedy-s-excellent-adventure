@@ -145,6 +145,12 @@ module.exports = function(grunt) {
         src: '../java/',
         dest: 'dist/apidoc/'
       }
+    },
+    retire: {
+      js: ['.'], /** Scan js-files in app/src/ directory and subdirectories. **/
+      node: ['.'],
+      options: {
+      }
     }
   });
 
@@ -160,6 +166,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-apidoc');
   grunt.loadNpmTasks('grunt-angular-templates');
+  grunt.loadNpmTasks('grunt-retire');
 
   // Default tasks.
   grunt.registerTask('default', ['clean:init', 'ngAnnotate', 'concat:docs', 'concat:share', 'less', 'concat:css',
