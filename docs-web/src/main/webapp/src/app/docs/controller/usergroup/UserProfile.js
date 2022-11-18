@@ -3,9 +3,9 @@
 /**
  * User profile controller.
  */
-angular.module('docs').controller('UserProfile', function($stateParams, Restangular, $scope) {
-  // Load user
-  Restangular.one('user', $stateParams.username).get().then(function(data) {
-    $scope.user = data;
-  });
+angular.module('docs').controller('UserProfile', ($stateParameters, Restangular, $scope) => {
+	// Load user
+	Restangular.one('user', $stateParameters.username).get().then(data => {
+		$scope.user = data;
+	});
 });

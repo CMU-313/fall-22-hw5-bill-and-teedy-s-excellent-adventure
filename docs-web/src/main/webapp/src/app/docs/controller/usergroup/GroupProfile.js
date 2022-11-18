@@ -3,9 +3,9 @@
 /**
  * Group profile controller.
  */
-angular.module('docs').controller('GroupProfile', function($stateParams, Restangular, $scope) {
-  // Load user
-  Restangular.one('group', $stateParams.name).get().then(function(data) {
-    $scope.group = data;
-  });
+angular.module('docs').controller('GroupProfile', ($stateParameters, Restangular, $scope) => {
+	// Load user
+	Restangular.one('group', $stateParameters.name).get().then(data => {
+		$scope.group = data;
+	});
 });
